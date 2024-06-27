@@ -57,7 +57,8 @@ INSTALLED_APPS = [
     'match',
     'scoring',
     'matchview',
-    'channels',
+    'daphne',
+    # 'channels',
 ]
 
 MIDDLEWARE = [
@@ -79,9 +80,13 @@ ROOT_URLCONF = 'django_rest_backend.urls'
 # In-memory channel layer (for development)
 CHANNEL_LAYERS = {
     'default': {
-        'BACKEND': 'channels.layers.InMemoryChannelLayer',
+       'BACKEND': 'channels_redis.core.RedisChannelLayer',
+       'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
     },
 }
+
 
 TEMPLATES = [
     {
