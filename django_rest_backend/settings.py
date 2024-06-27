@@ -35,7 +35,7 @@ SECRET_KEY = 'django-insecure-12&w9tk!@c3__b=p)_183c&^)djih&!5)mcn1a&)fb62&0%&vk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -113,13 +113,24 @@ ASGI_APPLICATION = 'django_rest_backend.asgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'cricstars',
+#         'USER': 'postgres',
+#         'PASSWORD': 'myown1983',
+#         'HOST': 'localhost',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'cricstars',
-        'USER': 'postgres',
-        'PASSWORD': 'myown1983',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'myproject',
+        'USER': 'myprojectuser',
+        'PASSWORD': 'password',
         'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
