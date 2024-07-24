@@ -95,7 +95,7 @@ class SendOTPView(APIView):
         """
         Send OTP message.
         """
-        url = f"https://2factor.in/API/V1/{settings.SMS_API_KEY}/SMS/{mobile}/{otp}"
+        url = f"https://2factor.in/API/V1/{settings.SMS_API_KEY}/VOICE/{mobile}/{otp}"
         payload = ""
         headers = {'content-type': 'application/x-www-form-urlencoded'}
         response = requests.get(url, data=payload, headers=headers)
